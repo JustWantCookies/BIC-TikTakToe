@@ -2,23 +2,20 @@ package org.example;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
-public class PlayerTest
-{
+public class PlayerTest {
+
     @Test
-    public void isMarkerCorrectTrue()
-    {
-        Player player=new Player('X');
-        boolean res = player.getMarker()=='X';
-        assertTrue(res);
+    public void getMarkerTest(){
+        Player player = new Player('X');
+        assertEquals(player.getMarker(), 'X');
     }
 
     @Test
-    public void isMarkerCorrectFalse() {
-        Player player=new Player('0');
-        boolean res = player.getMarker()=='X';
-        assertFalse(res);
+    public void getMarkerNegativeTest(){
+        Player player = new Player('O');
+        assertNotEquals(player.getMarker(), 'X');
     }
 }

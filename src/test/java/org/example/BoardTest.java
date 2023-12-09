@@ -102,4 +102,19 @@ public class BoardTest {
         String expectedOutput = "-------\n|X| | |\n| | | |\n| | | |\n-------";
         assertEquals(expectedOutput, outputStream.toString().trim());
     }
+
+    @Test
+    public void checkWinnerNegativeTest() {
+        Board board = new Board();
+        assertEquals(' ', board.checkWinner());
+    }
+
+    @Test
+    public void checkWinnerPositiveTest() {
+        Board board = new Board();
+        board.place(0, 0, 'X');
+        board.place(0, 1, 'X');
+        board.place(0, 2, 'X');
+        assertEquals('X', board.checkWinner());
+    }
 }

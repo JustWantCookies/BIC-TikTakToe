@@ -2,8 +2,10 @@ package org.example;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.Assert.*;
 
 public class BoardTest {
 
@@ -74,5 +76,30 @@ public class BoardTest {
         Board board = new Board();
 
         assertFalse(board.isFull());
+    }
+
+    @Test
+    public void printBoardTest() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        Board board = new Board();
+        board.print();
+
+        String expectedOutput = "-------\n| | | |\n| | | |\n| | | |\n-------";
+        assertEquals(expectedOutput, outputStream.toString().trim());
+    }
+
+    @Test
+    public void printBoardWithValueTest() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        Board board = new Board();
+        board.place(0, 0, 'X');
+        board.print();
+
+        String expectedOutput = "-------\n|X| | |\n| | | |\n| | | |\n-------";
+        assertEquals(expectedOutput, outputStream.toString().trim());
     }
 }

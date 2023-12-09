@@ -34,7 +34,7 @@ public class TicTacToe
        }
     }
 
-    public void switchCurrentPlayer()
+    private void switchCurrentPlayer()
     {
         if(currentPlayer.equals(player1))
             currentPlayer=player2;
@@ -44,8 +44,15 @@ public class TicTacToe
         System.out.printf("Current Player: %s",currentPlayer);
     }
 
-    public boolean hasWinner()
-    {
+    private boolean hasWinner() {
+        char marker = currentPlayer.getMarker();
+
+        if (board.checkWinner() == marker){
+            System.out.printf("Player %s wins!", currentPlayer);
+            return true;
+        }
+
         return false;
     }
+
 }

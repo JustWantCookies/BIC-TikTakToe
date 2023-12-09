@@ -49,7 +49,7 @@ public class Board {
             }
             System.out.print("\n");
         }
-        System.out.print("-------");
+        System.out.print("-------\n");
     }
 
     public char checkWinner() {

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertFalse;
 public class PlayerTest
 {
     @Test
-    public void isEmptyTrueTest()
+    public void isMarkerCorrectTrue()
     {
         Player player=new Player('X');
         boolean res = player.getMarker()=='X';
@@ -16,7 +16,7 @@ public class PlayerTest
     }
 
     @Test
-    public void isEmptyFalseTest() {
+    public void isMarkerCorrectFalse() {
         Player player=new Player('0');
         boolean res = player.getMarker()=='X';
         assertFalse(res);

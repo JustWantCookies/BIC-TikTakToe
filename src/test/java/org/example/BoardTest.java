@@ -86,7 +86,7 @@ public class BoardTest {
         Board board = new Board();
         board.print();
 
-        String expectedOutput = "-------\n| | | |\n| | | |\n| | | |\n-------\n";
+        String expectedOutput = "-------\n| | | |\n| | | |\n| | | |\n-------";
         assertEquals(expectedOutput, outputStream.toString().trim());
     }
 
@@ -99,7 +99,20 @@ public class BoardTest {
         board.place(0, 0, 'X');
         board.print();
 
-        String expectedOutput = "-------\n|X| | |\n| | | |\n| | | |\n-------\n";
+        String expectedOutput = "-------\n|X| | |\n| | | |\n| | | |\n-------";
         assertEquals(expectedOutput, outputStream.toString().trim());
+    }
+
+    public void checkWinnerNegativeTest() {
+        Board board = new Board();
+        assertEquals(' ', board.checkWinner());
+    }
+
+    public void checkWinnerPositiveTest() {
+        Board board = new Board();
+        board.place(0, 0, 'X');
+        board.place(0, 1, 'X');
+        board.place(0, 2, 'X');
+        assertEquals(' ', board.checkWinner());
     }
 }

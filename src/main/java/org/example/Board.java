@@ -31,11 +31,24 @@ public class Board {
     public boolean isFull() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                 if(cells[i][i] == ' ') {
-                     return false;
-                 }
+                if (cells[i][i] == ' ') {
+                    return false;
+                }
             }
         }
         return true;
+    }
+
+    public void print() {
+        System.out.print("-------\n");
+        for (int i = 0; i < 3; i++) {
+            System.out.print("|");
+            for (int j = 0; j < 3; j++) {
+                System.out.print(cells[i][j]);
+                System.out.print("|");
+            }
+            System.out.print("\n");
+        }
+        System.out.print("-------");
     }
 }

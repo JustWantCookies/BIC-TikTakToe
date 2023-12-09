@@ -20,14 +20,18 @@ public class TicTacToe
     {
         Scanner scanner=new Scanner(System.in);
 
-        switchCurrentPlayer();
-        board.print();
+       while(!hasWinner())
+       {
+           switchCurrentPlayer();
+           board.print();
 
-        System.out.print("row(0,2);");
-        int row=scanner.nextInt();
-        System.out.print("column(0,2):");
-        int col=scanner.nextInt();
+           System.out.print("row(0,2);");
+           int row=scanner.nextInt();
+           System.out.print("column(0,2):");
+           int col=scanner.nextInt();
 
+           board.place(row,col,currentPlayer.getMarker());
+       }
     }
 
     public void switchCurrentPlayer()

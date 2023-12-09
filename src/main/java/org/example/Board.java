@@ -13,4 +13,8 @@ public class Board {
     public boolean isCellEmpty(int x, int y){
         return cells[x][y] == ' ';
     }
+
+    public void place(int x, int y, char marker){
+        cells[x][y] = marker;
+    }
 }

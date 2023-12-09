@@ -37,4 +37,22 @@ public class BoardTest {
         boolean res = board.isCellEmpty(1,1);
         assertFalse(res);
     }
+
+    @Test
+    public void clearBoardTest(){
+        Board board = new Board();
+        board.clear();
+        boolean res = board.isCellEmpty(0,0);
+        assertTrue(res);
+    }
+
+    @Test
+    public void clearPlaceBoardTest(){
+        Board board = new Board();
+        board.place(0,0, 'X');
+        board.place(2,1, 'X');
+        board.clear();
+        boolean res = board.isCellEmpty(0,0) && board.isCellEmpty(2,1);
+        assertTrue(res);
+    }
 }

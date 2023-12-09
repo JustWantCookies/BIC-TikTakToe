@@ -20,7 +20,7 @@ public class TicTacToe
     {
         Scanner scanner=new Scanner(System.in);
 
-       while(!hasWinner())
+       while(!hasWinner() && !board.isFull())
        {
            switchCurrentPlayer();
            board.print();

@@ -21,4 +21,20 @@ public class BoardTest {
         boolean res = board.isCellEmpty(0,0);
         assertFalse(res);
     }
+
+    @Test
+    public void placeTestZeroZero(){
+        Board board = new Board();
+        board.place(0,0, 'X');
+        boolean res = board.isCellEmpty(0,0);
+        assertFalse(res);
+    }
+
+    @Test
+    public void placeTestOneOne(){
+        Board board = new Board();
+        board.place(1,1, 'X');
+        boolean res = board.isCellEmpty(1,1);
+        assertFalse(res);
+    }
 }

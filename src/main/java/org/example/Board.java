@@ -27,4 +27,15 @@ public class Board {
     public void place(int x, int y, char marker) {
         cells[x][y] = marker;
     }
+
+    public boolean isFull() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                 if(cells[i][i] == ' ') {
+                     return false;
+                 }
+            }
+        }
+        return true;
+    }
 }

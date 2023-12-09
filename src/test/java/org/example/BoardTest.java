@@ -115,6 +115,6 @@ public class BoardTest {
         board.place(0, 0, 'X');
         board.place(0, 1, 'X');
         board.place(0, 2, 'X');
-        assertEquals(' ', board.checkWinner());
+        assertEquals('X', board.checkWinner());
     }
 }

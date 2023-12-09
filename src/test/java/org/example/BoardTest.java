@@ -17,7 +17,7 @@ public class BoardTest {
     @Test
     public void isEmptyFalseTest(){
         Board board = new Board();
-
+        board.place(0,0, 'X');
         boolean res = board.isCellEmpty(0,0);
         assertFalse(res);
     }

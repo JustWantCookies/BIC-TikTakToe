@@ -6,22 +6,25 @@ public class Board {
 
     private char[][] cells;
 
-    public Board(){
+    public Board() {
         cells = new char[3][3];
 
-        // Init board
-        for(int i =0; i <3; i++){
-            for(int j =0; j <3; j++){
+        clear();
+    }
+
+    public void clear() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 cells[i][j] = ' ';
             }
         }
     }
 
-    public boolean isCellEmpty(int x, int y){
+    public boolean isCellEmpty(int x, int y) {
         return cells[x][y] == ' ';
     }
 
-    public void place(int x, int y, char marker){
+    public void place(int x, int y, char marker) {
         cells[x][y] = marker;
     }
 }

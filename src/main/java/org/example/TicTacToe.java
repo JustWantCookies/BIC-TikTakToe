@@ -37,14 +37,14 @@ public class TicTacToe {
         else
             currentPlayer = player1;
         System.out.println();
-        System.out.printf("Current Player: %s", currentPlayer.getMarker());
+        System.out.printf("Current Player: %s \n", currentPlayer.getMarker());
     }
 
     private boolean hasWinner() {
         char marker = currentPlayer.getMarker();
 
         if (board.checkWinner() == marker) {
-            System.out.printf("Player %s wins!", currentPlayer);
+            System.out.printf("Player %s wins!", currentPlayer.getMarker());
             return true;
         }
 
